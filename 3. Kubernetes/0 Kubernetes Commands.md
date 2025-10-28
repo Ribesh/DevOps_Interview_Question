@@ -268,40 +268,40 @@ kubectl get nodes
 
 The basic command:
 
-\`\`\`bash
+```bash
 kubectl run nginx --image=nginx
-\`\`\`
+```
 
 can be extended with various options:
 
 ### 1. Run as a Pod (Without Creating a Deployment)
-\`\`\`bash
+```bash
 kubectl run nginx --image=nginx --restart=Never
-\`\`\`
+```
 
 ### 2. Specify Ports
-\`\`\`bash
+```bash
 kubectl run nginx --image=nginx --port=80
-\`\`\`
+```
 
 ### 3. Setting Environment Variables
-\`\`\`bash
+```bash
 kubectl run nginx --image=nginx --env="ENV=production" --env="DEBUG=false"
-\`\`\`
+```
 
 ### 4. Dry Run and Output as YAML (Declarative)
-\`\`\`bash
+```bash
 kubectl run nginx --image=nginx --dry-run=client -o yaml
-\`\`\`
+```
 
 ### 5. Specify Command & Arguments
-\`\`\`bash
+```bash
 kubectl run nginx --image=nginx --restart=Never --command -- /bin/bash -c "echo Hello Kubernetes"
-\`\`\`
+```
 
 ### 6. Expose Port on Multiple Containers or Custom Labels
-\`\`\`bash
+```bash
 kubectl run nginx --image=nginx --port=80 --labels="app=nginx,env=dev"
-\`\`\`
+```
 
 These options give you flexibility in how you initiate and manage your pods using a simple \`kubectl run\` command.
